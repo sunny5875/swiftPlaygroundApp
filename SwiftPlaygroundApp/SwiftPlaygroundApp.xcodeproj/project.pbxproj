@@ -17,6 +17,9 @@
 		D60635CC2913844A0056E204 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = D60635CB2913844A0056E204 /* Toast */; };
 		D6C5B9D8291385A9000ED1F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C5B9D7291385A9000ED1F5 /* ViewController.swift */; };
 		D6C5B9E029138CA9000ED1F5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D6C5B9DF29138CA9000ED1F5 /* SnapKit */; };
+		D6C5B9E22913BA4F000ED1F5 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C5B9E12913BA4F000ED1F5 /* Extension.swift */; };
+		D6C5B9E42914D07F000ED1F5 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C5B9E32914D07F000ED1F5 /* UILabelExtension.swift */; };
+		D6C5B9E62914DBEE000ED1F5 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C5B9E52914DBEE000ED1F5 /* MyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		D60635BB2913837E0056E204 /* SwiftPlaygroundAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPlaygroundAppUITests.swift; sourceTree = "<group>"; };
 		D60635BD2913837E0056E204 /* SwiftPlaygroundAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPlaygroundAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D6C5B9D7291385A9000ED1F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D6C5B9E12913BA4F000ED1F5 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D6C5B9E32914D07F000ED1F5 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		D6C5B9E52914DBEE000ED1F5 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,9 @@
 				D60635A52913837E0056E204 /* LaunchScreen.storyboard */,
 				D60635A82913837E0056E204 /* Info.plist */,
 				D6C5B9D7291385A9000ED1F5 /* ViewController.swift */,
+				D6C5B9E12913BA4F000ED1F5 /* Extension.swift */,
+				D6C5B9E32914D07F000ED1F5 /* UILabelExtension.swift */,
+				D6C5B9E52914DBEE000ED1F5 /* MyCell.swift */,
 			);
 			path = SwiftPlaygroundApp;
 			sourceTree = "<group>";
@@ -268,7 +277,10 @@
 			files = (
 				D6C5B9D8291385A9000ED1F5 /* ViewController.swift in Sources */,
 				D606359B2913837D0056E204 /* AppDelegate.swift in Sources */,
+				D6C5B9E42914D07F000ED1F5 /* UILabelExtension.swift in Sources */,
 				D606359D2913837D0056E204 /* SceneDelegate.swift in Sources */,
+				D6C5B9E22913BA4F000ED1F5 /* Extension.swift in Sources */,
+				D6C5B9E62914DBEE000ED1F5 /* MyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
