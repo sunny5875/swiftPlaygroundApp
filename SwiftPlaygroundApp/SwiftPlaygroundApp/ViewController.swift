@@ -8,6 +8,7 @@
 import UIKit
 import Toast
 import SnapKit
+import BottomSheet
 
 class ViewController: UIViewController {
 
@@ -97,20 +98,40 @@ class ViewController: UIViewController {
         
     }()
     
-    private lazy var colorPalleteButtonList: [UIButton] = {
-        var list: [UIButton] = []
+    private lazy var colorPalleteButtonList: [UIView] = {
+        var list: [UIView] = []
         let colorList: [UIColor] = [.systemRed, .systemOrange, .systemGreen, .systemBlue, .systemPurple, .black]
         
         for i in 0..<colorList.count {
-            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-            button.backgroundColor = colorList[i]
-            button.tintColor = .white
-            button.layer.cornerRadius = button.frame.size.width / 2
             
+//            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+//            button.backgroundColor = colorList[i]
+//            button.tintColor = .white
+//            button.layer.cornerRadius = button.frame.size.width / 2
+            let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            image.image = UIImage()
+            image.contentMode = .center
+            image.clipsToBounds = true
+            image.backgroundColor = colorList[i]
+            image.tintColor = .white
+            image.layer.cornerRadius = image.frame.size.width / 2
+           
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: 48, height: 48))
             
+            view.addSubview(image)
+        
+            image.snp.makeConstraints {
+                $0.top.bottom.trailing.leading.equalToSuperview().inset(4)
 
-            button.addTarget(self, action: #selector( colorPalleteButtonTapped(sender:)), for: .touchUpInside)
-            list.append(button)
+            }
+            view.layer.cornerRadius = view.frame.size.width / 2
+            view.layer.borderColor = UIColor.white.cgColor
+            view.layer.borderWidth = 1
+            view.backgroundColor = .white
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(colorPalleteButtonTapped(_:)))
+
+            view.addGestureRecognizer(tapGestureRecognizer)
+            list.append(view)
         }
         
         return list
@@ -127,19 +148,26 @@ class ViewController: UIViewController {
         return stackView
     }()
     
-    @objc private func colorPalleteButtonTapped(sender: UIButton) {
-        sender.isSelected = true
-        sender.applyRoundedCorners()
-        sender.setImage(UIImage(systemName: "checkmark"), for: .selected)
-
+    @objc func colorPalleteButtonTapped(_ sender: UITapGestureRecognizer) {
+       
+        print("누름")
+        let senderView = sender.view
+        guard let senderImageView = sender.view?.subviews[0] as? UIImageView else {return}
+        senderImageView.image = UIImage(systemName: "checkmark")
         
-        for button in colorPalleteButtonList {
-            if button != sender {
-                button.removeRoundedCorners()
-                sender.isSelected = false
+        senderView?.layer.borderColor = UIColor.systemGray4.cgColor
+        
+        
+        for view in colorPalleteButtonList {
+            if view != senderView {
+                guard let imageView = view.subviews[0] as? UIImageView else {return}
+                view.layer.borderColor = UIColor.white.cgColor
+                imageView.image = UIImage()
             }
         }
     }
+    
+
     
     private var dataSource = getSampleImages()
     
@@ -237,7 +265,24 @@ class ViewController: UIViewController {
     
     @objc func navigationTitleButtonTapped() {
         print("네비게이션 타이틀을 누름")
+//        presentBottomSheetInsideNavigationController(
+//            viewController: BottomSheetViewController(),
+//            configuration: .default
+//        )
+        
+        showBottomSheet()
+        
+ 
     }
+    
+    private func showBottomSheet() {
+        let bottomSheetVC = CustomBottomSheetViewController()
+       // 1
+       bottomSheetVC.modalPresentationStyle = .overFullScreen
+       // 2
+       self.present(bottomSheetVC, animated: false, completion: nil)
+    }
+
 
     func testToast() {
         // crypto 주소 복사하기 toast
