@@ -17,7 +17,9 @@ class CustomBottomSheetViewController: UIViewController {
           case expanded
           case normal
       }
-    
+    private let contentViewController: UIViewController
+
+
     private var bottomSheetViewTopConstraint: NSLayoutConstraint!
     var defaultHeight: CGFloat = 300
     
@@ -30,7 +32,7 @@ class CustomBottomSheetViewController: UIViewController {
     //ui적으로 올라갈 수 있음을 알리는 view
     private let dragIndicatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray5
+        view.backgroundColor = .systemGray4
         view.layer.cornerRadius = 3
         return view
     }()
@@ -51,6 +53,17 @@ class CustomBottomSheetViewController: UIViewController {
         return view
     }()
     
+    init(contentViewController: UIViewController = UIViewController()) {
+        self.contentViewController = contentViewController
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,8 +78,13 @@ class CustomBottomSheetViewController: UIViewController {
     }
     
     private func setupUI() {
+        addChild(contentViewController)
         [backgroundView, bottomSheetView, dragIndicatorView]
             .forEach {self.view.addSubview($0)}
+        
+        bottomSheetView.addSubview(contentViewController.view)
+          contentViewController.didMove(toParent: self)
+          bottomSheetView.clipsToBounds = true
         
         //background view 선택 시 내려가는 gesture
         let backgroundTapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped(_:)))
@@ -90,7 +108,8 @@ class CustomBottomSheetViewController: UIViewController {
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         bottomSheetView.translatesAutoresizingMaskIntoConstraints = false
         dragIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        
+        contentViewController.view.translatesAutoresizingMaskIntoConstraints = false
+          
         
         let topConstant = view.safeAreaInsets.bottom + view.safeAreaLayoutGuide.layoutFrame.height
         bottomSheetViewTopConstraint = bottomSheetView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstant)
@@ -113,6 +132,14 @@ class CustomBottomSheetViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(60)
             $0.height.equalTo(dragIndicatorView.layer.cornerRadius * 2)
+        }
+        
+        self.contentViewController.view.snp.makeConstraints {
+            $0.top.equalTo(self.bottomSheetView.snp.top)
+            $0.bottom.equalTo(self.bottomSheetView.snp.bottom)
+            $0.leading.equalTo(self.bottomSheetView.snp.leading)
+            $0.trailing.equalTo(self.bottomSheetView.snp.trailing)
+            
         }
     }
     
