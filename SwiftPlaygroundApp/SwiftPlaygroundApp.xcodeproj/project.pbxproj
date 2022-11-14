@@ -24,6 +24,9 @@
 		D6C5B9EB2918E1E2000ED1F5 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C5B9EA2918E1E2000ED1F5 /* BottomSheetViewController.swift */; };
 		D6C5B9EF2918E8FC000ED1F5 /* CustomBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C5B9EE2918E8FC000ED1F5 /* CustomBottomSheetViewController.swift */; };
 		D6C5BA3029220DC2000ED1F5 /* MyTopTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C5BA2F29220DC2000ED1F5 /* MyTopTipView.swift */; };
+		D6C5BA3929222E66000ED1F5 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D6C5BA3829222E66000ED1F5 /* RxCocoa */; };
+		D6C5BA3B29222E66000ED1F5 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D6C5BA3A29222E66000ED1F5 /* RxSwift */; };
+		D6C5BA3E29222E75000ED1F5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D6C5BA3D29222E75000ED1F5 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 			files = (
 				D60635CC2913844A0056E204 /* Toast in Frameworks */,
 				D6C5B9E92918E1C4000ED1F5 /* BottomSheet in Frameworks */,
+				D6C5BA3B29222E66000ED1F5 /* RxSwift in Frameworks */,
+				D6C5BA3E29222E75000ED1F5 /* Alamofire in Frameworks */,
+				D6C5BA3929222E66000ED1F5 /* RxCocoa in Frameworks */,
 				D6C5B9E029138CA9000ED1F5 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +174,9 @@
 				D60635CB2913844A0056E204 /* Toast */,
 				D6C5B9DF29138CA9000ED1F5 /* SnapKit */,
 				D6C5B9E82918E1C4000ED1F5 /* BottomSheet */,
+				D6C5BA3829222E66000ED1F5 /* RxCocoa */,
+				D6C5BA3A29222E66000ED1F5 /* RxSwift */,
+				D6C5BA3D29222E75000ED1F5 /* Alamofire */,
 			);
 			productName = SwiftPlaygroundApp;
 			productReference = D60635972913837D0056E204 /* SwiftPlaygroundApp.app */;
@@ -245,6 +254,8 @@
 				D60635CA2913844A0056E204 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				D6C5B9DE29138CA9000ED1F5 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				D6C5B9E72918E1C4000ED1F5 /* XCRemoteSwiftPackageReference "BottomSheet" */,
+				D6C5BA3729222E66000ED1F5 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				D6C5BA3C29222E75000ED1F5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = D60635982913837D0056E204 /* Products */;
 			projectDirPath = "";
@@ -656,6 +667,22 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		D6C5BA3729222E66000ED1F5 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		D6C5BA3C29222E75000ED1F5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -673,6 +700,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D6C5B9E72918E1C4000ED1F5 /* XCRemoteSwiftPackageReference "BottomSheet" */;
 			productName = BottomSheet;
+		};
+		D6C5BA3829222E66000ED1F5 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6C5BA3729222E66000ED1F5 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		D6C5BA3A29222E66000ED1F5 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6C5BA3729222E66000ED1F5 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		D6C5BA3D29222E75000ED1F5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6C5BA3C29222E75000ED1F5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

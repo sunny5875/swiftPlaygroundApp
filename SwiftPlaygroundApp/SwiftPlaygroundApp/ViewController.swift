@@ -220,9 +220,13 @@ class ViewController: UIViewController {
         addSubViews()
         setLayout()
         
-//        testToast()
+        testToast()
        testScrollLabel()
         testTextAnimation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        <#code#>
     }
     
     
@@ -296,13 +300,13 @@ class ViewController: UIViewController {
 
     func testToast() {
         // crypto 주소 복사하기 toast
-        self.view.showToast(copyToastView, position: .bottom){ didTap in
-            if didTap {
-                print("completion from tap")
-            } else {
-                print("completion without tap")
-            }
-        }
+//        self.view.showToast(copyToastView, position: .bottom){ didTap in
+//            if didTap {
+//                print("completion from tap")
+//            } else {
+//                print("completion without tap")
+//            }
+//        }
         
 
         // indicator toast
@@ -312,10 +316,40 @@ class ViewController: UIViewController {
         var style = ToastStyle()
         style.cornerRadius = 20
         style.imageSize = CGSize(width: 10, height: 10)
-        self.view.makeToast("핀번호 변경이 완료되었습니다.", image: UIImage(systemName: "globe"),style: style)
+        style.backgroundColor = .darkGray
+        self.view.makeToast("인증번호를 다시 전송하였습니다.",style: style)
+        
+      
 
         
     }
+    
+//    func showToast(_ message : String, withDuration: Double, delay: Double) {
+//        let toastLabel = UILabel()
+//        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+//        toastLabel.textColor = UIColor.white
+//        toastLabel.font = UIFont.systemFont(ofSize: 14.0)
+//        toastLabel.textAlignment = .center
+//        toastLabel.text = message
+//        toastLabel.alpha = 1.0
+//        toastLabel.layer.cornerRadius = 100
+//        toastLabel.clipsToBounds  =  true
+//
+//        self.view.addSubview(toastLabel)
+//
+//        toastLabel.snp.makeConstraints {
+//            $0.centerX.equalToSuperview()
+//            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(32)
+//            $0.height.equalTo(47)
+//        }
+//
+//
+//        UIView.animate(withDuration: withDuration, delay: delay, options: .curveEaseOut, animations: {
+//            toastLabel.alpha = 0.0
+//        }, completion: {(isCompleted) in
+//            toastLabel.removeFromSuperview()
+//        })
+//    }
     
     func testScrollLabel() {
         testScrollMoneyLabel.configure(with: 103934958)
