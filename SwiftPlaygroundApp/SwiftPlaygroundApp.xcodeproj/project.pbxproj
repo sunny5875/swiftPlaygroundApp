@@ -23,6 +23,7 @@
 		D6C5B9E92918E1C4000ED1F5 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = D6C5B9E82918E1C4000ED1F5 /* BottomSheet */; };
 		D6C5B9EB2918E1E2000ED1F5 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C5B9EA2918E1E2000ED1F5 /* BottomSheetViewController.swift */; };
 		D6C5B9EF2918E8FC000ED1F5 /* CustomBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C5B9EE2918E8FC000ED1F5 /* CustomBottomSheetViewController.swift */; };
+		D6C5BA3029220DC2000ED1F5 /* MyTopTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C5BA2F29220DC2000ED1F5 /* MyTopTipView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		D6C5B9E52914DBEE000ED1F5 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		D6C5B9EA2918E1E2000ED1F5 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		D6C5B9EE2918E8FC000ED1F5 /* CustomBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomSheetViewController.swift; sourceTree = "<group>"; };
+		D6C5BA2F29220DC2000ED1F5 /* MyTopTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTopTipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				D6C5B9E52914DBEE000ED1F5 /* MyCell.swift */,
 				D6C5B9EA2918E1E2000ED1F5 /* BottomSheetViewController.swift */,
 				D6C5B9EE2918E8FC000ED1F5 /* CustomBottomSheetViewController.swift */,
+				D6C5BA2F29220DC2000ED1F5 /* MyTopTipView.swift */,
 			);
 			path = SwiftPlaygroundApp;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				D6C5B9D8291385A9000ED1F5 /* ViewController.swift in Sources */,
 				D6C5B9EF2918E8FC000ED1F5 /* CustomBottomSheetViewController.swift in Sources */,
 				D6C5B9EB2918E1E2000ED1F5 /* BottomSheetViewController.swift in Sources */,
+				D6C5BA3029220DC2000ED1F5 /* MyTopTipView.swift in Sources */,
 				D606359B2913837D0056E204 /* AppDelegate.swift in Sources */,
 				D6C5B9E42914D07F000ED1F5 /* UILabelExtension.swift in Sources */,
 				D606359D2913837D0056E204 /* SceneDelegate.swift in Sources */,

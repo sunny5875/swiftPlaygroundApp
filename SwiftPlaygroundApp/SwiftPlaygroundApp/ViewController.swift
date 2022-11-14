@@ -167,6 +167,12 @@ class ViewController: UIViewController {
         }
     }
     
+    private lazy var tipView = MyTopTipView(
+      viewColor: .systemYellow,
+      tipStartX: 70.5,
+      tipWidth: 11.0,
+      tipHeight: 6.0
+    )
 
     
     private var dataSource = getSampleImages()
@@ -221,7 +227,7 @@ class ViewController: UIViewController {
     
     
     func addSubViews(){
-            [testScrollMoneyLabel, colorPalleteStackView, informationLabel1, informationLabel2, collectionView] // z스택처럼 쌓임
+            [testScrollMoneyLabel, colorPalleteStackView, informationLabel1, informationLabel2, collectionView, tipView] // z스택처럼 쌓임
                 .forEach { self.view.addSubview($0) }
     }
     
@@ -260,6 +266,12 @@ class ViewController: UIViewController {
             $0.height.equalTo(180)
             $0.trailing.leading.equalToSuperview()
             
+        }
+        
+        self.tipView.snp.makeConstraints {
+            $0.top.equalTo(self.collectionView.snp.bottom).offset(32)
+            $0.centerX.equalToSuperview()
+            $0.trailing.leading.equalToSuperview().inset(16)
         }
     }
     
